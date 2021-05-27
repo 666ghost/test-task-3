@@ -12,7 +12,7 @@ use Tests\TestCase;
  * Class FeatureTest
  * @package Tests\Feature
  */
-class FeatureTest extends TestCase
+class UniversitiesAPITest extends TestCase
 {
 
     /** @test */

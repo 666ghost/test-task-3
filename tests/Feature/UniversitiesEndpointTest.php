@@ -9,7 +9,7 @@ use Tests\TestCase;
  * Class EndpointsTest
  * @package Tests\Feature
  */
-class EndpointsTest extends TestCase
+class UniversitiesEndpointTest extends TestCase
 {
     /**
      * A basic test example.
