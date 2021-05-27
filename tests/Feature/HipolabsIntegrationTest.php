@@ -6,14 +6,16 @@ namespace Tests\Feature;
 
 use App\Modules\Universities\Entities\UniversityKeyEntity;
 use App\Modules\Universities\Services\UniversitiesApiParser;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 
 /**
  * Class FeatureTest
  * @package Tests\Feature
  */
-class UniversitiesAPITest extends TestCase
+class HipolabsIntegrationTest extends TestCase
 {
+    use DatabaseTransactions;
 
     /** @test */
     public function it_can_fetch_country_universities()
@@ -33,9 +35,6 @@ class UniversitiesAPITest extends TestCase
         /** @var UniversitiesApiParser $universityApiParser */
         $universityApiParser = app(UniversitiesApiParser::class);
         $universityApiParser->parse('France');
-
-        /** @var UniversityKeyEntity $universityKeyEntity */
-        $universityKeyEntity = app(UniversityKeyEntity::class);
 
         $this->assertDatabaseCount('university_keys', 267);
     }
