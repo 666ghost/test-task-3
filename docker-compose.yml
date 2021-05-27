@@ -38,3 +38,8 @@ services:
       - ./:/app
     working_dir: /app
     tty: true
+  redis:
+    container_name: ${APP_NAME}_redis
+    image: redis
+    ports:
+      - 6379:6379
